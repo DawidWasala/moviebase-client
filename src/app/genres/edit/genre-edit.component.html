@@ -1,0 +1,17 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1> Movie Form</h1>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+      <div class="form-group">
+        <label for="name">Title</label>
+        <input type="text" class="form-control" id="name"
+               placeholder="title"
+               required
+               name="name"
+               formControlName="name">
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+</div>

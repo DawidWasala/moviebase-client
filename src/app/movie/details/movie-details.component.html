@@ -1,0 +1,9 @@
+<div *ngIf="movie$ | async as movie">
+  <h2>{{ movie.name }}</h2>
+  <p>Id: {{movie.id}}</p>
+  <p>Genres:
+    <a *ngFor="let genre of movie.genres">{{genre.name}} </a>
+  </p>
+  <button *ngIf="isAdmin" type="button" class="btn btn-primary m-2"(click)="edit(movie.id)">Edit</button>
+  <button *ngIf="isAdmin" type="button" class="btn btn-danger m-2"(click)="remove(movie.id)">Remove</button>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1> Movie Form</h1>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+      <div class="form-group">
+        <label for="name">Title</label>
+        <input type="text" class="form-control" id="name"
+               placeholder="title"
+               required
+               name="name"
+               formControlName="name">
+      </div>
+
+      <div class="form-group">
+        <label for="genre">Genres</label>
+        <select class="form-control" id="genre"
+                multiple
+                required
+                name="genre"
+                formControlName="genres">
+          <option *ngFor="let gen of genres | async" [value]="gen.id">{{gen.name}}</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-success" type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+</div>

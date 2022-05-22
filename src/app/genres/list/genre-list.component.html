@@ -1,0 +1,14 @@
+<h1 class="m-2 text-center">Genres</h1>
+
+<button type="button" class="btn btn-primary m-2" routerLink="/genre-create" routerLinkActive="true">New</button>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item list-group-item-action my-2" *ngFor="let genre of genres$ | async"
+      (click)="details(genre)">
+    <h5>
+      <a [title]="genre.name + 'details'">
+        {{ genre.name }}
+      </a>
+    </h5>
+  </li>
+</ul>
+

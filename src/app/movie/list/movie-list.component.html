@@ -1,0 +1,21 @@
+<h1 class="m-2 text-center">Movies</h1>
+
+<button
+  type="button"
+  class="btn btn-primary m-2"
+  routerLink="/movie-create"
+  routerLinkActive="true"
+  *ngIf="isAdmin">New</button>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item list-group-item-action my-2" *ngFor="let movie of movies$ | async" (click)="details(movie)">
+    <h5>
+      <a [title]="movie.name + 'details'">
+        {{ movie.name }}
+        <i style="opacity: 0.5" *ngFor="let genre of movie.genres"> {{genre.name}}</i>
+      </a>
+    </h5>
+  </li>
+</ul>
+
+
